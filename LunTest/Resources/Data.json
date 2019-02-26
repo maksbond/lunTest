@@ -1,0 +1,19 @@
+{
+    "person": {
+        "person_id": 1,
+        "name": "Smile",
+        "address": "ул. Б. Хмельницкого 44",
+        "phone": "+38 (067) 335-83-18",
+        "profile_image_id": 11,
+        "lat": 50.446985,
+        "lng": 30.5077463
+    },
+    "images": [{
+        "image_id": 11,
+        "link": "https://i.pinimg.com/736x/8b/b4/1c/8bb41cd3738254e52808707eb737c43f.jpg"
+    },
+    {
+        "image_id": 12,
+        "link": "https://i.pinimg.com/736x/82/fa/8a/82fa8a8d0abac9e28614df1f5c45efeb.jpg"
+    }]
+}

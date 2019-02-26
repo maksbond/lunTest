@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0016822225CC6200A92AC7 /* MapInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0016812225CC6200A92AC7 /* MapInfoViewController.swift */; };
+		7A0016842225D8CF00A92AC7 /* PersonPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0016832225D8CF00A92AC7 /* PersonPlacemark.swift */; };
 		7A0ECEBC2222FCF200652229 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0ECEBB2222FCF200652229 /* AppDelegate.swift */; };
-		7A0ECEBE2222FCF200652229 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0ECEBD2222FCF200652229 /* ViewController.swift */; };
+		7A0ECEBE2222FCF200652229 /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0ECEBD2222FCF200652229 /* PersonListTableViewController.swift */; };
 		7A0ECEC12222FCF200652229 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ECEBF2222FCF200652229 /* Main.storyboard */; };
 		7A0ECEC32222FCF300652229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ECEC22222FCF300652229 /* Assets.xcassets */; };
 		7A0ECEC62222FCF300652229 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ECEC42222FCF300652229 /* LaunchScreen.storyboard */; };
+		7A0ECED02222FFA000652229 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A0ECECF2222FFA000652229 /* Data.json */; };
+		7A0ECED2222302AE00652229 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0ECED1222302AE00652229 /* PersonTableViewCell.swift */; };
+		7A6C07FF22230F630049A441 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6C07FE22230F630049A441 /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A0016812225CC6200A92AC7 /* MapInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoViewController.swift; sourceTree = "<group>"; };
+		7A0016832225D8CF00A92AC7 /* PersonPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPlacemark.swift; sourceTree = "<group>"; };
 		7A0ECEB82222FCF200652229 /* LunTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0ECEBB2222FCF200652229 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A0ECEBD2222FCF200652229 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7A0ECEBD2222FCF200652229 /* PersonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
 		7A0ECEC02222FCF200652229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A0ECEC22222FCF300652229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A0ECEC52222FCF300652229 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A0ECEC72222FCF300652229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A0ECECF2222FFA000652229 /* Data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
+		7A0ECED1222302AE00652229 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		7A6C07FE22230F630049A441 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A0016852225E16E00A92AC7 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				7A0ECEBD2222FCF200652229 /* PersonListTableViewController.swift */,
+				7A0ECED1222302AE00652229 /* PersonTableViewCell.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		7A0016862225E1CC00A92AC7 /* MapInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7A0016812225CC6200A92AC7 /* MapInfoViewController.swift */,
+				7A0016832225D8CF00A92AC7 /* PersonPlacemark.swift */,
+			);
+			path = MapInfo;
+			sourceTree = "<group>";
+		};
 		7A0ECEAF2222FCF200652229 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +82,33 @@
 		7A0ECEBA2222FCF200652229 /* LunTest */ = {
 			isa = PBXGroup;
 			children = (
-				7A0ECEBB2222FCF200652229 /* AppDelegate.swift */,
-				7A0ECEBD2222FCF200652229 /* ViewController.swift */,
-				7A0ECEBF2222FCF200652229 /* Main.storyboard */,
-				7A0ECEC22222FCF300652229 /* Assets.xcassets */,
-				7A0ECEC42222FCF300652229 /* LaunchScreen.storyboard */,
+				7A0ECECE2222FEAA00652229 /* Sources */,
+				7A0ECECD2222FE9800652229 /* Resources */,
 				7A0ECEC72222FCF300652229 /* Info.plist */,
 			);
 			path = LunTest;
+			sourceTree = "<group>";
+		};
+		7A0ECECD2222FE9800652229 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A0ECEBF2222FCF200652229 /* Main.storyboard */,
+				7A0ECEC22222FCF300652229 /* Assets.xcassets */,
+				7A0ECEC42222FCF300652229 /* LaunchScreen.storyboard */,
+				7A0ECECF2222FFA000652229 /* Data.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7A0ECECE2222FEAA00652229 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7A0016862225E1CC00A92AC7 /* MapInfo */,
+				7A0016852225E16E00A92AC7 /* Person */,
+				7A0ECEBB2222FCF200652229 /* AppDelegate.swift */,
+				7A6C07FE22230F630049A441 /* JSONParser.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +171,7 @@
 				7A0ECEC62222FCF300652229 /* LaunchScreen.storyboard in Resources */,
 				7A0ECEC32222FCF300652229 /* Assets.xcassets in Resources */,
 				7A0ECEC12222FCF200652229 /* Main.storyboard in Resources */,
+				7A0ECED02222FFA000652229 /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A0ECEBE2222FCF200652229 /* ViewController.swift in Sources */,
+				7A0ECED2222302AE00652229 /* PersonTableViewCell.swift in Sources */,
+				7A0016822225CC6200A92AC7 /* MapInfoViewController.swift in Sources */,
+				7A0ECEBE2222FCF200652229 /* PersonListTableViewController.swift in Sources */,
+				7A0016842225D8CF00A92AC7 /* PersonPlacemark.swift in Sources */,
+				7A6C07FF22230F630049A441 /* JSONParser.swift in Sources */,
 				7A0ECEBC2222FCF200652229 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DR6XG732FT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LunTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,7 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DR6XG732FT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LunTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
