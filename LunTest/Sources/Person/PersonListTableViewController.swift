@@ -19,7 +19,11 @@ class PersonListTableViewController: UITableViewController {
     /// Setup all data.
     override func viewDidLoad() {
         super.viewDidLoad()
-        json = JSONParser()
+        do {
+            self.json = try JSONParser(resource: "Data", with: "json")
+        } catch let jsonError as NSError {
+            self.show(jsonError)
+        }
         
         DispatchQueue.global().async {
             guard let json = self.json else { return }

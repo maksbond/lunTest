@@ -35,7 +35,6 @@ class PersonTableViewCell: UITableViewCell {
 }
 
 // MARK: Extension for UIActivityIndicatorView and UIImageView cornerRadius.
-
 @IBDesignable extension UIActivityIndicatorView {
     /// Set corner radius for layer of ActivityIndicator.
     @IBInspectable private var cornerRadius: CGFloat {

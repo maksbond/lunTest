@@ -58,10 +58,10 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </activityIndicatorView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-wL-hcB">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-wL-hcB">
                                             <rect key="frame" x="187.5" y="86" width="167.5" height="33"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                            <state key="normal" title="+38(093)6401333"/>
+                                            <state key="normal" title="phoneNumber"/>
                                             <connections>
                                                 <action selector="callToPerson:" destination="5Jm-ye-aZK" eventType="touchUpInside" id="G6l-d6-GmL"/>
                                             </connections>

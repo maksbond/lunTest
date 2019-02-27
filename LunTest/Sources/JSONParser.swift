@@ -9,25 +9,26 @@ import UIKit
 import CoreLocation
 
 /// Paste data from Data.json. Present model of application.
-class JSONParser: NSObject {
+class JSONParser {
     /// Store parsed data.
     private var jsonResult: [String: Any]?
     
     /// Initialize parser and get data from Data.json from Bundle.
-    override init() {
-        let fileUrl = Bundle.main.url(forResource: "Data", withExtension: "json")
+    init(resource: String, with fileExtension: String) throws {
+        let fileUrl = Bundle.main.url(forResource: resource, withExtension: fileExtension)
         if let fileUrl = fileUrl {
             do {
                 if try fileUrl.checkResourceIsReachable() {
-                    print("JSON file is accesible.")
                     let jsonData = try Data(contentsOf: fileUrl)
                     do {
                         self.jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any]
                     }
                 }
             } catch {
-                print("Error occured when try to access Data.json")
+                throw NSError(domain: JSONErrorDomain, code: JSONParserError.fileReadError.rawValue, userInfo: [JSONErrorDescription: "Can't get data from \(resource).\(fileExtension) file."])
             }
+        } else {
+            throw NSError(domain: JSONErrorDomain, code: JSONParserError.fileNotExistError.rawValue, userInfo: [JSONErrorDescription: "File \(resource).\(fileExtension) doesn't exist."])
         }
     }
     
