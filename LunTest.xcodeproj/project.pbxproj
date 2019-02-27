@@ -76,6 +76,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7A00168C2226D62200A92AC7 /* JSONParser */ = {
+			isa = PBXGroup;
+			children = (
+				7A6C07FE22230F630049A441 /* JSONParser.swift */,
+			);
+			path = JSONParser;
+			sourceTree = "<group>";
+		};
 		7A0ECEAF2222FCF200652229 = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +124,11 @@
 		7A0ECECE2222FEAA00652229 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7A00168C2226D62200A92AC7 /* JSONParser */,
 				7A0016872226C56400A92AC7 /* Extensions */,
 				7A0016862225E1CC00A92AC7 /* MapInfo */,
 				7A0016852225E16E00A92AC7 /* Person */,
 				7A0ECEBB2222FCF200652229 /* AppDelegate.swift */,
-				7A6C07FE22230F630049A441 /* JSONParser.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";

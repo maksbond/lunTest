@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import os
 
 class PersonListTableViewController: UITableViewController {
     /// Results of JSON parsing.
@@ -33,16 +34,17 @@ class PersonListTableViewController: UITableViewController {
             if !fileManager.fileExists(atPath: urlToAvatar.path), let imagePath = json.personAvatarUrl {
                 do {
                     let imageData = try Data(contentsOf: imagePath)
-                    print("Image is loaded")
+                    os_log(.info, "Image data successfully loaded by %{public}@", imagePath.absoluteString)
                     try imageData.write(to: urlToAvatar, options: .atomic)
                     DispatchQueue.main.async {
-                        print("Reload data")
+                        os_log(.info, "Reload visible cells")
                         let visibleCells = self.tableView.visibleCells
                         let indexPaths = visibleCells.compactMap({ self.tableView.indexPath(for: $0)})
                         self.tableView.reloadRows(at: indexPaths, with: .automatic)
                     }
                 } catch {
-                    print("Error: Unable to load data")
+                    os_log(.error, "Unable to load image data")
+                    self.showAlert("Error image loading", "Can't load image from avatar image path.")
                 }
             }
         }
@@ -108,9 +110,11 @@ class PersonListTableViewController: UITableViewController {
         if let personCell = personCell {
             selectedPersonName = personCell.personNameLabel.text
         }
+        os_log(.info, "Perform segue with identifier = %{public}@", MapInfoViewController.segueIdentifier)
         self.performSegue(withIdentifier: MapInfoViewController.segueIdentifier, sender: self)
     }
     
+    /// Returns height of table view cells.
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
@@ -119,9 +123,7 @@ class PersonListTableViewController: UITableViewController {
     /// Get avatar image if it's possible.
     private func avatarImage() -> UIImage? {
         var image: UIImage? = nil
-        guard let json = json else {
-            return nil
-        }
+        guard let json = json else { return nil }
         let documentsDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as String
         let urlToAvatar = URL(fileURLWithPath: documentsDirectoryPath).appendingPathComponent(json.personAvatarName)
         let fileManager = FileManager.default

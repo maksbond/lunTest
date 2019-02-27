@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import os
 
 /// Paste data from Data.json. Present model of application.
 class JSONParser {
@@ -17,11 +18,14 @@ class JSONParser {
     init(resource: String, with fileExtension: String) throws {
         let fileUrl = Bundle.main.url(forResource: resource, withExtension: fileExtension)
         if let fileUrl = fileUrl {
+            os_log(.info, "Successfully get url to %{public}@.%{public}@ file.", resource, fileExtension)
             do {
                 if try fileUrl.checkResourceIsReachable() {
                     let jsonData = try Data(contentsOf: fileUrl)
+                    os_log(.info, "Successfully get json data.")
                     do {
                         self.jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String: Any]
+                        os_log(.info, "Successfully completed json serilication from data of file.")
                     }
                 }
             } catch {

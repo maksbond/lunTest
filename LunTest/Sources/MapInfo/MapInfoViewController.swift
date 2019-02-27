@@ -65,7 +65,11 @@ class MapInfoViewController: UIViewController, MKMapViewDelegate {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             mapView.showsUserLocation = true
             DispatchQueue.main.async {
-                self.directionButton.isHidden = self.mapView.userLocation.location != nil
+                self.directionButton.alpha = 0
+                UIView.animate(withDuration: 0.7, animations: {
+                    self.directionButton.alpha = 1
+                    self.directionButton.isHidden = self.mapView.userLocation.location != nil
+                })
             }
         } else {
             locationManager.requestWhenInUseAuthorization()
@@ -82,6 +86,10 @@ class MapInfoViewController: UIViewController, MKMapViewDelegate {
         request.transportType = .automobile
         
         let directions = MKDirections(request: request)
+        
+        if mapView.overlays.count > 0 {
+            mapView.removeOverlays(mapView.overlays)
+        }
         
         directions.calculate { [unowned self] response, error in
             guard let unwrappedResponse = response else { return }

@@ -124,9 +124,10 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Q5s-qY-V1k">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-h5-dPy">
-                                <rect key="frame" x="301.5" y="80" width="53.5" height="53.5"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-h5-dPy">
+                                <rect key="frame" x="309" y="601" width="50" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="CMe-JD-kT9"/>
                                     <constraint firstAttribute="width" secondItem="cWh-h5-dPy" secondAttribute="height" multiplier="1:1" id="lZh-Om-kk8"/>
                                 </constraints>
                                 <state key="normal" image="directionIcon"/>
@@ -142,12 +143,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cWh-h5-dPy" firstAttribute="top" secondItem="10w-h4-P4z" secondAttribute="top" constant="16" id="1DI-Ho-Kcx"/>
-                            <constraint firstAttribute="trailing" secondItem="cWh-h5-dPy" secondAttribute="trailing" constant="20" symbolic="YES" id="BOb-2W-QAl"/>
+                            <constraint firstItem="10w-h4-P4z" firstAttribute="trailing" secondItem="cWh-h5-dPy" secondAttribute="trailing" constant="16" id="A2n-Km-tMd"/>
                             <constraint firstItem="Q5s-qY-V1k" firstAttribute="leading" secondItem="10w-h4-P4z" secondAttribute="leading" id="G0g-ma-Vjj"/>
+                            <constraint firstItem="10w-h4-P4z" firstAttribute="bottom" secondItem="cWh-h5-dPy" secondAttribute="bottom" constant="16" id="d3N-ek-Ewk"/>
                             <constraint firstItem="Q5s-qY-V1k" firstAttribute="trailing" secondItem="10w-h4-P4z" secondAttribute="trailing" id="noh-wf-LQl"/>
                             <constraint firstItem="Q5s-qY-V1k" firstAttribute="bottom" secondItem="10w-h4-P4z" secondAttribute="bottom" id="qjO-sB-mbZ"/>
-                            <constraint firstItem="cWh-h5-dPy" firstAttribute="width" secondItem="Q5s-qY-V1k" secondAttribute="width" multiplier="1:7" id="uIU-99-PU0"/>
                             <constraint firstItem="Q5s-qY-V1k" firstAttribute="top" secondItem="gTK-gn-DbI" secondAttribute="top" id="uaZ-1f-N46"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10w-h4-P4z"/>
