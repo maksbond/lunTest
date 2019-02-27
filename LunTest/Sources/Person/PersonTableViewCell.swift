@@ -23,10 +23,18 @@ class PersonTableViewCell: UITableViewCell {
     /// Activiti indicator for image loading.
     @IBOutlet var imageLoadIndicator: UIActivityIndicatorView!
     
+    /// Validate ukraininan phone number.
+    private func validate(number: String) -> Bool {
+        let PHONE_REGEX = "^380\\d{9}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result =  phoneTest.evaluate(with: number)
+        return result
+    }
+    
     /// Calls by number.
     @IBAction func callToPerson(_ sender: UIButton) {
         let number = sender.titleLabel?.text?.filter("01234567890.".contains)
-        if let number = number {
+        if let number = number, validate(number: number) {
             guard let callUrl = URL(string: "tel://" + number) else { return }
             UIApplication.shared.open(callUrl)
         }
